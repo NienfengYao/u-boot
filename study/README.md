@@ -25,7 +25,9 @@
 ---
 ## Debug
 *	Show more debug info in default
-	*	Add "#define DEBUG" in begining of include/common.h
+	```
+	Add "#define DEBUG" in begining of include/common.h
+	```
 
 *	GDB (Terminal 1/2 should be in the same directory.)
 	```
@@ -49,9 +51,9 @@
 
 ---
 ## Reference:
-	*	U-Boot
-		*	./doc/README.qemu-arm
-		*	./README
-	*	GDB
-		*	(GDB Debugging ARM U-Boot on QEMU)[http://winfred-lu.blogspot.com/2011/12/arm-u-boot-on-qemu.html]
-		*	(GNU GDB Debugger Command Cheat Sheet)[http://www.yolinux.com/TUTORIALS/GDB-Commands.html]
+*	U-Boot
+	*	./doc/README.qemu-arm
+	*	./README
+*	GDB
+	*	[GDB Debugging ARM U-Boot on QEMU](http://winfred-lu.blogspot.com/2011/12/arm-u-boot-on-qemu.html)
+	*	[GNU GDB Debugger Command Cheat Sheet](http://www.yolinux.com/TUTORIALS/GDB-Commands.html)
