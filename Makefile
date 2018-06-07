@@ -1578,6 +1578,17 @@ CHANGELOG:
 	unexpand -a | sed -e 's/\s\s*$$//' > $@
 
 #########################################################################
+###
+# These are for my studying
+# make my_tags   Create cscope/ctags for my rule
+# make clean_my_tags  Delete the cscope/ctags files
+my_tags:
+	./my_tags.sh
+
+clean_my_tags:
+	rm -rf cscope* tags 
+
+#########################################################################
 
 ###
 # Cleaning is done on three levels.
