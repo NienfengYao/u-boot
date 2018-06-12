@@ -149,7 +149,12 @@ clear_loop:
 	/* call board_init_r(gd_t *id, ulong dest_addr) */
 	mov	x0, x18				/* gd_t */
 	ldr	x1, [x18, #GD_RELOCADDR]	/* dest_addr */
+	#if 0 //RyanYao
 	b	board_init_r			/* PC relative jump */
+	#else
+	b	freertos_main
+	/* b	c_entry	*/
+	#endif
 
 	/* NOTREACHED - board_init_r() does not return */
 

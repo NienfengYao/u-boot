@@ -724,6 +724,7 @@ libs-y += test/
 libs-y += test/dm/
 libs-$(CONFIG_UT_ENV) += test/env/
 libs-$(CONFIG_UT_OVERLAY) += test/overlay/
+libs-y += freertos/
 
 libs-y += $(if $(BOARDDIR),board/$(BOARDDIR)/)
 
