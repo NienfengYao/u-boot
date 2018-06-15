@@ -101,6 +101,16 @@ extern UBaseType_t uxPortSetInterruptMask( void );
 extern void vPortClearInterruptMask( UBaseType_t uxNewMaskValue );
 extern void vPortInstallFreeRTOSVectorTable( void );
 
+/*
+* MSR DAIFSET, #2"
+	Set PSTATE.I(IRQ mask bit) to 1. Exception masked.
+
+* DSR: Data Synchronization Barrier.
+
+* ISB: Instruction Synchronization Barrier
+	
+* SY: Full system barrier operation.
+*/
 #define portDISABLE_INTERRUPTS()									\
 	__asm volatile ( "MSR DAIFSET, #2" ::: "memory" );				\
 	__asm volatile ( "DSB SY" );									\

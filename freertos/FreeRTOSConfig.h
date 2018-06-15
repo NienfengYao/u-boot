@@ -198,12 +198,8 @@ void vClearTickInterrupt( void );
 
 /* The following constant describe the hardware, and are correct for the
 Zynq MPU. */
-#if 1 //RyanYao
-#define XPAR_PSU_ACPU_GIC_DIST_BASEADDR 0xF9010000
-#define XPAR_PSU_ACPU_GIC_BASEADDR 0xF9020000
-#endif
-#define configINTERRUPT_CONTROLLER_BASE_ADDRESS 		( XPAR_PSU_ACPU_GIC_DIST_BASEADDR )
-#define configINTERRUPT_CONTROLLER_CPU_INTERFACE_OFFSET ( XPAR_PSU_ACPU_GIC_BASEADDR - XPAR_PSU_ACPU_GIC_DIST_BASEADDR )
+#define configINTERRUPT_CONTROLLER_BASE_ADDRESS 		0x08000000
+#define configINTERRUPT_CONTROLLER_CPU_INTERFACE_OFFSET 0x10000
 #define configUNIQUE_INTERRUPT_PRIORITIES				32
 
 #define fabs( x ) __builtin_fabs( x )

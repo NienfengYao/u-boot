@@ -75,8 +75,6 @@ void hello_world_task(void *p)
 {
 	//configASSERT( ( ( uint64_t ) p) == 1 );
 	while(1) {
-		//printk("Hello World Task! p=%x", p);
-     	//print_uart0("hello_world_task() Hello world!\n");
      	debug("hello_world_task() Hello world!\n");
 		//vTaskDelay(1000);
 	}
@@ -85,16 +83,23 @@ void hello_world_task(void *p)
 void freertos_main(void)
 {
 	debug("Ryan: %s()\n", __func__); //RyanYao
+
 #if 1
+	/* Issue: hello_world_task doesn't work. */
 	/* Create Tasks */
-	xTaskCreate(hello_world_task, "hello_task", 64, 0, 1, 0);
+	xTaskCreate(hello_world_task, "hello_task", 1024, NULL, 1, NULL);
 
 	/* Start the scheduler */	
 	vTaskStartScheduler();
+#elif 0
+	/* configASSERT(0) works. */
+	printf("Ryan: %s() configASSERT Test.\n", __func__); //RyanYao
+	//configASSERT(1);	// Condition is true, pass
+	configASSERT(0);	// Condition is false, show error message
 #else
-	portDISABLE_INTERRUPTS();
-	debug("Ryan: %s() disable IRQ\n", __func__); //RyanYao
-	portENABLE_INTERRUPTS();
-	debug("Ryan: %s() enable IRQ\n", __func__); //RyanYao
+	/* Test passed. */
+	debug("Ryan: %s() Task enter/exit Test.\n", __func__); //RyanYao
+	taskENTER_CRITICAL();
+	taskEXIT_CRITICAL();
 #endif
 }

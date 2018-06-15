@@ -68,9 +68,6 @@
 
 /* Standard includes. */
 #include <stdlib.h>
-#if 0 //RyanYao
-#include <string.h>
-#endif
 
 /* Defining MPU_WRAPPERS_INCLUDED_FROM_API_FILE prevents task.h from redefining
 all the API functions to use the MPU wrappers.  That should only be done when
@@ -782,7 +779,6 @@ static void prvAddNewTaskToReadyList( TCB_t *pxNewTCB ) PRIVILEGED_FUNCTION;
 	TCB_t *pxNewTCB;
 	BaseType_t xReturn;
 
-	debug("Ryan: %s()\n", __func__); //RyanYao
 		/* If the stack grows down then allocate the stack then the TCB so the stack
 		does not grow into the TCB.  Likewise if the stack grows up then allocate
 		the TCB then the stack. */
@@ -1946,7 +1942,6 @@ void vTaskStartScheduler( void )
 {
 BaseType_t xReturn;
 
-	debug("Ryan: %s()\n", __func__); //RyanYao
 	/* Add the idle task at the lowest priority. */
 	#if( configSUPPORT_STATIC_ALLOCATION == 1 )
 	{
