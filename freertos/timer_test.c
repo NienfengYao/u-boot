@@ -236,9 +236,11 @@ void timer_test(void)
 	printf("Ryan: %s()\n", __func__);
 
 	/* enable the GIC distributor */
+	/*
 	printf("GICD_CTLR = %u\n", readl(0x08000000));
 	writel(0x61, 0x08000000);
 	printf("GICD_CTLR = %u\n", readl(0x08000000));
+	*/
 
 	// Always disable the timer
 	disable_cntv();
