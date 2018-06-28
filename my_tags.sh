@@ -34,6 +34,10 @@ find_dir="$UBOOT/arch/arm/cpu/armv8"
 find $find_dir \
 	-name "*.[chsS]" -print >> $UBOOT/cscope.files
 
+find_dir="$UBOOT/arch/arm/cpu/armv7"
+find $find_dir \
+	-name "*.[chsS]" -print >> $UBOOT/cscope.files
+
 find_dir="$UBOOT/arch/arm/lib"
 find $find_dir -name "*.[chsS]" -print >> $UBOOT/cscope.files
 
@@ -45,6 +49,9 @@ find_dir="$UBOOT/include"
 find $find_dir \
 	-path "$find_dir/configs"  									-prune -o 	\
 	-name "*.[chsS]" -print >> $UBOOT/cscope.files
+
+find_dir="$UBOOT/include/configs/qemu-arm.h"
+find $find_dir -print >> $UBOOT/cscope.files
 
 #################################################################################
 cscope -bkq -i $UBOOT/cscope.files

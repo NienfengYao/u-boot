@@ -14,7 +14,9 @@ typedef volatile unsigned long	vu_long;
 typedef volatile unsigned short vu_short;
 typedef volatile unsigned char	vu_char;
 
-#define DEBUG	//RyanYao
+#if 0 //RyanYao
+#define DEBUG
+#endif
 
 /* Allow sharing constants with type modifiers between C and assembly. */
 #define _AC(X, Y)       (X##Y)

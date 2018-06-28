@@ -188,7 +188,7 @@ system. */
  * that is suitable for use on the Zynq MPU.  FreeRTOS_Tick_Handler() must
  * be installed as the peripheral's interrupt handler.
  */
-#if 0 //RyanYao
+#if 1 //RyanYao
 void vConfigureTickInterrupt( void );
 #define configSETUP_TICK_INTERRUPT() vConfigureTickInterrupt()
 

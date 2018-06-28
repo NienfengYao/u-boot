@@ -152,7 +152,8 @@ clear_loop:
 	#if 0 //RyanYao
 	b	board_init_r			/* PC relative jump */
 	#else
-	b	freertos_main
+	b	timer_test
+	/* b	freertos_main */
 	/* b	c_entry	*/
 	#endif
 
