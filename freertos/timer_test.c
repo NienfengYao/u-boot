@@ -202,7 +202,7 @@ void disable_cntv(void)
 	uint32_t val;
 
 	val = read_cntv_ctl();
-	val &= ARM_ARCH_TIMER_ENABLE;
+	val &= ~ARM_ARCH_TIMER_ENABLE;
 	asm volatile ("msr cntv_ctl_el0, %0" :: "r" (val));
 }
 
@@ -265,7 +265,7 @@ void timer_test(void)
 
 	while(1){
 		printf("current_cnt=%llu, cntv_ctl=%u\n", read_cntvct(), read_cntv_ctl());
-#if 0 // Wait Interrupt
+#if 1 // Wait Interrupt
 		io_halt();
 #else // Observe CNTP_CTL_EL0[2]: ISTATUS
 		uint32_t val;
