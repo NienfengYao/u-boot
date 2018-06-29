@@ -1,6 +1,11 @@
 # Study booting procedure of U-Boot (QEMU: Cortex-A57 + virt)
 
 ## Build and Test
+*	Get code
+	```
+	git clone https://github.com/NienfengYao/u-boot
+	get checkout freertos
+	```
 *	Environment setup
 	```
 	export PATH=$PATH:/home/ryanyao/work/buildroot-2017.11-rc1/output/host/bin
